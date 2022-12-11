@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <div>
+        <h2>Events in Action</h2>
+        <button v-on:click="add(1)">Add</button>
+        <button v-on:click="sub(1)">Remove</button>
+        <p v-once>Start: {{ counter }}</p>
+        <p>Result: {{ counter }}</p>
+      </div>
+      <div>
+        <h2>Event arguments</h2>
+        <input type="text" v-on:input="setInput" />
+        <p>Your Input: {{ inp }}</p>
+      </div>
+      <div>
+        <h2>Event modifiers</h2>
+        <form v-on:submit.prevent="submitform">
+          <input type="text" />
+          <button>Sign up</button>
+        </form>
+      </div>
+      <div>
+        <h2>Event and Data binding</h2>
+        <input type="text" v-model="text" />
+        <button v-on:click="resetInput">clear</button>
+      </div>
+      <div>
+        <h2>Computed Properties</h2>
+        <input type="text" v-model="fu" />
+        <p>computed value: {{ fullinput }}</p>
+      </div>
+    </section>
+  </body>
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="app.js" defer></script>
+</html>
