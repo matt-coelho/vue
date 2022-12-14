@@ -34,6 +34,13 @@ const app = Vue.createApp({
       return this.fu + " " + " hardcoded value"
     },
   },
+  watch: {
+    inp(value) {
+      // (value, oldValue)
+      //this will watch the inp property
+      this.fu = value + " - teste - " // value = this.inp
+    },
+  },
 })
 
 app.mount("#events")
